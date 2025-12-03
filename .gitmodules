@@ -1,0 +1,3 @@
+[submodule "sabre_generator"]
+	path = sabre_generator
+	url = https://github.com/sgware/sabre-heuristic-data-generator
