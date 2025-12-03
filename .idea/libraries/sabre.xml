@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sabre">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sabre_generator/sabre/lib/sabre.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/sabre_generator/sabre/lib/sabre.jar!/" />
+    </SOURCES>
+  </library>
+</component>
