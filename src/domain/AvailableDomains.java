@@ -1,9 +1,11 @@
+package domain;
+
 /**
  * Holds all the available domains.
  * @implNote  If you are adding a new domain, please update this list.
  */
 public enum AvailableDomains {
-    DEER_HUNTER("deerhunter");
+    DEER_HUNTER("DeerHunter");
 
     private final String domainName; // Field that holds the domain name
 
