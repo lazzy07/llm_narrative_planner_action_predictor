@@ -4,9 +4,10 @@ import domain.AvailableDomains;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import planner_data.VisitorData;
 
 import java.io.FileReader;
-import java.util.Locale;
+import java.util.ArrayList;
 
 public class FileHandler {
     private final AvailableDomains domain;
@@ -31,7 +32,7 @@ public class FileHandler {
         return fullPath;
     }
 
-    public void readCSVFile(){
+    public ArrayList<VisitorData> readCSVFile(){
         String csvFilePath = getFullPath();
         System.out.println("Reading CSV file: " + csvFilePath + " started");
 
@@ -45,13 +46,18 @@ public class FileHandler {
                         .setTrim(true)
                         .get()
         )){
-            for(CSVRecord row : parser){
-                String epistemic = row.get("epistemic");
-                System.out.println("Epistemic: " + epistemic);
+            ArrayList<VisitorData> records = new ArrayList<>();
+
+            long i = 0;
+            for(CSVRecord record: parser){
+                records.add(new VisitorData(i, record.get("epistemic"), record.get("plan"), record.get("state"), Integer.parseInt(record.get("distance"))));
+                i++;
             }
+
+            return records;
         } catch (Exception e){
-            System.out.println("ERROR: at the CSV parser, CSV File: " + csvFilePath);
-            e.printStackTrace();
+            System.out.printf("ERROR: at the CSV parser, CSV File: %s%n", csvFilePath);
+            return null;
         }
     }
 }
