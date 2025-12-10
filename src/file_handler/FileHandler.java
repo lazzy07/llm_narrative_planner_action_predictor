@@ -50,7 +50,7 @@ public class FileHandler {
 
             long i = 0;
             for(CSVRecord record: parser){
-                records.add(new VisitorData(i, record.get("epistemic"), record.get("plan"), record.get("state"), Integer.parseInt(record.get("distance"))));
+                records.add(new VisitorData(i, record.get("epistemic"), record.get("plan"), record.get("state"), record.get("available_actions"), Integer.parseInt(record.get("distance"))));
                 i++;
             }
 

@@ -14,7 +14,7 @@ public class PromptSnippet {
             """;
 
     public static final String allActionDescription = """
-            These are all the actions available in the domain:
+            These are all the actions available at this situation:
             """;
 
     public static final String finalInstruction = """

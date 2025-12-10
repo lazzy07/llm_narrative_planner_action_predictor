@@ -3,5 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sabre_generator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sabre_generator/sabre" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sabre_generator/sabre-benchmarks" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sabre_generator/sabre-benchmarks/sabre" vcs="Git" />
   </component>
 </project>

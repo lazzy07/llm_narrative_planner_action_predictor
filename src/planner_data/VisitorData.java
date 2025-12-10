@@ -10,14 +10,16 @@ public class VisitorData {
     public final String epistemic;
     public String[] plan;
     public String[] state;
+    public String[] availableActions;
     public final int distance;
 
-    public VisitorData(long id, String epistemic, String planStr, String stateStr, int distance) {
+    public VisitorData(long id, String epistemic, String planStr, String stateStr, String availableActions, int distance) {
         this.id = id;
         this.epistemic = epistemic;
         this.processPlan(planStr);
         this.processState(stateStr);
         this.distance = distance;
+        this.processAvailableActions(availableActions);
     }
 
     /**
@@ -33,6 +35,17 @@ public class VisitorData {
         String[] unsanitizedActionArr = planStr.split(";");
         ArrayList<String> sanitizedActionArrList = this.sanitizeStrArray(unsanitizedActionArr);
         this.plan = ToArray(sanitizedActionArrList, String.class);
+    }
+
+    private void processAvailableActions(String planStr){
+        if(planStr.isEmpty()){
+            this.plan = new String[0];
+            return;
+        }
+
+        String[] unsanitizedActionArr = planStr.split(";");
+        ArrayList<String> sanitizedActionArrList = this.sanitizeStrArray(unsanitizedActionArr);
+        this.availableActions = ToArray(sanitizedActionArrList, String.class);
     }
 
     /**
@@ -93,6 +106,16 @@ public class VisitorData {
 
         for (String s : this.state) {
             strBuilder.append(s);
+        }
+
+        return strBuilder.toString();
+    }
+
+    public String getAllAvailableActions(){
+        StringBuilder strBuilder = new StringBuilder();
+
+        for (String s : this.availableActions) {
+            strBuilder.append(s).append("\n");
         }
 
         return strBuilder.toString();
