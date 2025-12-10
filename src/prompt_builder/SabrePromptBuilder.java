@@ -47,8 +47,6 @@ public class SabrePromptBuilder extends PromptBuilder {
                 
                 %s
                 
-                %s
-                
-                """.formatted(PromptSnippet.generalDescription, dh.domainDescription, PromptSnippet.allActionDescription, node.data.getAllAvailableActions(),dh.getAvailableActions(),PromptSnippet.beforePlanDescription, node.data.getAllActions(), PromptSnippet.beforeCurrentStateDescription, node.data.getAllState(), PromptSnippet.finalInstruction);
+                """.formatted(PromptSnippet.generalDescription, dh.domainDescription, PromptSnippet.allActionDescription, node.data.getAllAvailableActions(),PromptSnippet.beforePlanDescription, node.data.getAllActions(), PromptSnippet.beforeCurrentStateDescription, node.data.getAllState(), PromptSnippet.finalInstruction);
     }
 }
